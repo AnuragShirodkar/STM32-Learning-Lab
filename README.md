@@ -11,6 +11,8 @@ Built with STM32CubeIDE + HAL library.
 | 03 | Toggle LED | State logic, debounce waiting |
 | 04 | LED Sequence | ODR register, multi-LED control, HAL+bare metal mix |
 | 05 | "Hello World!" | printf on IDE |
+| 06 | Square Wave | Square wave using DAC |
+| 07 | Blink LED-Timer | Blink LED, Timer, Debugger, ITM|
 
 ## Board
 STM32F407G-DISC1 Discovery Board
