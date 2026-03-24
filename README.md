@@ -10,6 +10,7 @@ Built with STM32CubeIDE + HAL library.
 | 02 | Button LED | GPIO input, pull-down resistor |
 | 03 | Toggle LED | State logic, debounce waiting |
 | 04 | LED Sequence | ODR register, multi-LED control, HAL+bare metal mix |
+| 05 | "Hello World!" | printf on IDE |
 
 ## Board
 STM32F407G-DISC1 Discovery Board
