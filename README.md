@@ -14,6 +14,8 @@ Built with STM32CubeIDE + HAL library.
 | 06 | Square Wave | Square wave using DAC |
 | 07 | Blink LED-Timer | Blink LED, Timer, Debugger, ITM|
 | 08 | LED blink-PWM | LED blink, PWM |
+| 09 | Triangle wave | Triange wave, DAC, Equation|
+| 10 | Staircase wave | Staircase wave, DAC, Equation |
 
 ## Board
 STM32F407G-DISC1 Discovery Board
