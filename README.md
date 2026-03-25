@@ -16,6 +16,7 @@ Built with STM32CubeIDE + HAL library.
 | 08 | LED blink-PWM | LED blink, PWM |
 | 09 | Triangle wave | Triange wave, DAC, Equation|
 | 10 | Staircase wave | Staircase wave, DAC, Equation |
+| 11 | Independent WDT | LED-blink, WDT, Types of WDT-Independent WDT |
 
 ## Board
 STM32F407G-DISC1 Discovery Board
