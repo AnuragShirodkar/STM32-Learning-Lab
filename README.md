@@ -18,6 +18,9 @@ Built with STM32CubeIDE + HAL library.
 | 10 | Staircase wave | Staircase wave, DAC, Equation |
 | 11 | Independent WDT | LED-blink, WDT, Types of WDT, Independent WDT |
 | 12 | Window WDT | LED-blink, WDT, Types of WDT, Window WDT |
+| 13 | STM32 UART Tx | UART-Transmeter, Print|
+| 14 | STM32 UART Rx | LED-ON-OFF, UART-Reciver, Print |
+| 15 | 4 LEDs Blink Print UART | LED-blink, UART, Print |
 
 ## Board
 STM32F407G-DISC1 Discovery Board
