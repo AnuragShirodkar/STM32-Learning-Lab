@@ -96,55 +96,45 @@ int main(void)
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
   while (1)
-  {
-	  HAL_UART_Receive(&huart2, &rx_byte, 1, HAL_MAX_DELAY);
+{
+    HAL_UART_Receive(&huart2, &ch, 1, HAL_MAX_DELAY);
 
-	  	      switch(ch)
-	  	      {
-	  	          case '1':
-	  	              HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
-	  	              HAL_UART_Transmit(&huart2, (uint8_t*)"LED ON\r\n", 8, HAL_MAX_DELAY);
-	  	              HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
-	  	              HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
-	  	              HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_RESET);
-	  	              break;
+    switch(ch)
+    {
+        case '1':
+            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_SET);
+            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15, GPIO_PIN_RESET);
+            HAL_UART_Transmit(&huart2, (uint8_t*)"LED1 ON\r\n", 9, HAL_MAX_DELAY);
+            break;
 
-	  	          case '2':
-	  	        	  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_SET);
-	  	        	  HAL_UART_Transmit(&huart2, (uint8_t*)"LED ON\r\n", 8, HAL_MAX_DELAY);
-	  	        	  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
-	  	        	  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
-	  	        	  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_RESET);
-	  	        	  break;
-	  	          case '3':
-	  	        	  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_SET);
-	  	        	  HAL_UART_Transmit(&huart2, (uint8_t*)"LED ON\r\n", 8, HAL_MAX_DELAY);
-	  	        	  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
-	  	        	  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
-	  	        	  HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_RESET);
-	  	        case '4':
-	  	        	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
-	  	        	HAL_UART_Transmit(&huart2, (uint8_t*)"LED ON\r\n", 8, HAL_MAX_DELAY);
-	  	        	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
-	  	        	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
-	  	        	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
+        case '2':
+            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_SET);
+            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12|GPIO_PIN_14|GPIO_PIN_15, GPIO_PIN_RESET);
+            HAL_UART_Transmit(&huart2, (uint8_t*)"LED2 ON\r\n", 9, HAL_MAX_DELAY);
+            break;
 
+        case '3':
+            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_SET);
+            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_15, GPIO_PIN_RESET);
+            HAL_UART_Transmit(&huart2, (uint8_t*)"LED3 ON\r\n", 9, HAL_MAX_DELAY);
+            break;
 
-	  	          case '0':
-	  	              HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12, GPIO_PIN_RESET);
-	  	            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_RESET);
-	  	            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_RESET);
-	  	        	HAL_GPIO_WritePin(GPIOD, GPIO_PIN_14, GPIO_PIN_RESET);
-	  	        	HAL_UART_Transmit(&huart2, (uint8_t*)" ALL LEDs OFF\r\n", 9, HAL_MAX_DELAY);
-	  	              break;
+        case '4':
+            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_15, GPIO_PIN_SET);
+            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14, GPIO_PIN_RESET);
+            HAL_UART_Transmit(&huart2, (uint8_t*)"LED4 ON\r\n", 9, HAL_MAX_DELAY);
+            break;
 
-	  	          default:
-	  	              HAL_UART_Transmit(&huart2, (uint8_t*)"Invalid\r\n", 9, HAL_MAX_DELAY);
-	  	      }
-    /* USER CODE END WHILE */
+        case '0':
+            HAL_GPIO_WritePin(GPIOD, GPIO_PIN_12|GPIO_PIN_13|GPIO_PIN_14|GPIO_PIN_15, GPIO_PIN_RESET);
+            HAL_UART_Transmit(&huart2, (uint8_t*)"ALL OFF\r\n", 9, HAL_MAX_DELAY);
+            break;
 
-    /* USER CODE BEGIN 3 */
-  }
+        default:
+            HAL_UART_Transmit(&huart2, (uint8_t*)"Invalid\r\n", 9, HAL_MAX_DELAY);
+            break;
+    }
+}
   /* USER CODE END 3 */
 }
 
