@@ -25,6 +25,9 @@ Built with STM32CubeIDE + HAL library.
 | 17 | 4 LEDs ON/OFF Switch case UART | LED ON/OFF, UART, Switch case, PuTTY |
 | 18 | PWM-UART | LED ON/OFF, UART, PuTTY |
 | 19 | Counters-UART | LED ON/OFF, UART, Counters, PuTTY |
+| 20 | LED Interrupt | LED ON/OFF, UART, Interrupt, PuTTY |
+| 21 | Frequency timer interrupt | LED ON/OFF, UART, Frequency timer, PuTTY |
+| 22 | Thermocouple SPI | MAX6614, UART, Thermocouple, PuTTY |
 
 ## Board
 STM32F407G-DISC1 Discovery Board
