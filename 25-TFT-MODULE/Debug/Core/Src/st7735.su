@@ -1,0 +1,6 @@
+../Core/Src/st7735.c:4:13:ST7735_WriteCommand	16	static
+../Core/Src/st7735.c:12:13:ST7735_WriteData	16	static
+../Core/Src/st7735.c:20:6:ST7735_Reset	8	static
+../Core/Src/st7735.c:28:6:ST7735_Init	16	static
+../Core/Src/st7735.c:52:6:ST7735_FillScreen	32	static
+../Core/Src/st7735.c:73:6:ST7735_WriteString	24	static
